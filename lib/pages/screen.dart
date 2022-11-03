@@ -25,9 +25,9 @@ class DataShow extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-              onPressed:()
+              onPressed:() async
               {
-                getDaoInsert();
+                await getDaoInsert();
               }
           )
         ],
@@ -45,7 +45,7 @@ class DataShow extends StatelessWidget {
                  );
          }
              )
-            : CircularProgressIndicator();
+            : const CircularProgressIndicator();
            }
        )
 
@@ -75,7 +75,7 @@ class DataShow extends StatelessWidget {
     list.add(Items(id: 3,categoryName: "videos"));
     list.add(Items(id: 4,categoryName: "test series"));
     ProductDao productDao = await getDaoObject();
-    productDao.insertProduct(list[0]);
+    productDao.insertProduct(list);
   }
 
   getDaoObject() async

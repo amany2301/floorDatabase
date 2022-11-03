@@ -5,7 +5,7 @@ import 'package:floor/floor.dart';
 abstract class ProductDao{
 
 
-  @Query('SELECT * FROM category')
+  @Query('SELECT * FROM Items')
   Future<List<Items>>getAllCategory();
 
 
@@ -13,5 +13,5 @@ abstract class ProductDao{
   // Future<void>getSpecifyCategory();
 
   @insert
-  Future<void> insertProduct(Items items);
+  Future<void> insertProduct(List<Items> items);
 }

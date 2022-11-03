@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           child: ElevatedButton(
             child: Text('Click next page' ),
             onPressed: () {
-              Get.to(DataShow());
+              Get.to(()=>DataShow());
             },
           ),
         ),
